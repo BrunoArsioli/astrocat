@@ -16,7 +16,7 @@ Intall astrocat package:
 then, import crossmatch_catalog from astrocat.crossmatch library:
 
 ```
-from astrocat.crossmatch import crossmatch_catalogs
+from astrocat.crossmatch import crossmatch_catalog
 ```
 
 
