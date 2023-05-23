@@ -10,7 +10,7 @@ This function will take two DataFrames (main and external), the column names for
 Intall astrocat package: 
 
 ```
-install git+https://github.com/BrunoArsioli/astrocat.git
+!install git+https://github.com/BrunoArsioli/astrocat.git
 ```
 
 then, import crossmatch_catalog from astrocat.crossmatch library:
