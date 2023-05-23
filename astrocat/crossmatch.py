@@ -3,7 +3,7 @@ from astropy.coordinates import SkyCoord
 from astropy import units as u
 import numpy as np
 
-def crossmatch_astrocats(df_main, df_ext, ra_main, dec_main, ra_ext, dec_ext, col_list, max_distance):
+def crossmatch_astrocat(df_main, df_ext, ra_main, dec_main, ra_ext, dec_ext, col_list, max_distance):
     """
     Crossmatches two astronomical catalogs.
 
