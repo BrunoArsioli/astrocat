@@ -8,9 +8,9 @@ import astrocat
 from pandas.testing import assert_frame_equal
 
 
-def test_crossmatch_astrocats():
+def test_crossmatch_astrocat():
     """
-    Tests the crossmatch_astrocats function.
+    Tests the crossmatch_astrocat function.
 
     This test uses a small set of made up data to ensure that the function correctly identifies 
     matches and non-matches between two catalogs. The data includes:
@@ -22,7 +22,7 @@ def test_crossmatch_astrocats():
     """
     
     df_main = pd.DataFrame({'RA': [1, 2, 3, 5], 'DEC': [1, 2, 3, 5]})
-    df_ext = pd.DataFrame({'RA': [1, 2, 3, 4], 'DEC': [1, 2, 3, 4], 'DATA': ['a', 'b', 'c', 'd']})
+    df_ext  = pd.DataFrame({'RA': [1, 2, 3, 4], 'DEC': [1, 2, 3, 4], 'DATA': ['a', 'b', 'c', 'd']})
 
     result = crossmatch_astrocat(df_main, df_ext, 'RA', 'DEC', 'RA', 'DEC', ['DATA'], 1)
     
@@ -40,4 +40,4 @@ def test_crossmatch_astrocats():
     print("All tests passed!")
 
 
-test_crossmatch_astrocats()
+test_crossmatch_astrocat()
