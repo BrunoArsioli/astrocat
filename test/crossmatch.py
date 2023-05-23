@@ -9,6 +9,18 @@ from pandas.testing import assert_frame_equal
 
 
 def test_crossmatch_astrocats():
+    """
+    Tests the crossmatch_astrocats function.
+
+    This test uses a small set of made up data to ensure that the function correctly identifies 
+    matches and non-matches between two catalogs. The data includes:
+    - df_main with 4 sources, where the last one has no match in df_ext
+    - df_ext with 4 sources, where the last one has no match in df_main
+    
+    The test checks that the 'DATA' column from df_ext is correctly added to df_main for the matching objects,
+    and that non-matching objects have their 'DATA' field set to NaN.
+    """
+    
     df_main = pd.DataFrame({'RA': [1, 2, 3, 5], 'DEC': [1, 2, 3, 5]})
     df_ext = pd.DataFrame({'RA': [1, 2, 3, 4], 'DEC': [1, 2, 3, 4], 'DATA': ['a', 'b', 'c', 'd']})
 
