@@ -35,7 +35,15 @@ def crossmatch_astrocat(df_main, df_ext, ra_main, dec_main, ra_ext, dec_ext, col
     --------
     Here is how to use this function:
         If you have CatWISE2020 as the external catalog and want to write W1 and W2 info to your main DataFrame
-        df_main_updated = crossmatch_astrocats(df_main, df_ext, 'RA1', 'DEC1', 'RA2', 'DEC2', ['W1mag', 'w1snr', 'W2mag', 'w2snr'], 2.0)
+
+        col_list = ['W1mag', 'w1snr', 'W2mag', 'w2snr']
+        df_main_updated = crossmatch_astrocats(df_main, df_ext, 'RA1', 'DEC1', 'RA2', 'DEC2', col_list, 2.0)
+
+
+        If you want to track the external_source from where the information is read, add a source_id or source_name to col_list:
+
+        col_list = ['WISEname', 'W1mag', 'w1snr', 'W2mag', 'w2snr']
+        df_main_updated = crossmatch_astrocats(df_main, df_ext, 'RA1', 'DEC1', 'RA2', 'DEC2', col_list, 2.0)
     """
 
     # create cmain, Astropy object that holds a list of the main catalog coordinates
