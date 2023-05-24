@@ -2,10 +2,9 @@
 
 Crossmatching Astrophysical Catalogs
 
-This function will take two DataFrames (main and external), the column names for the R.A. and Dec. for each DataFrame, the list of column names to be added to the main DataFrame, and the maximum distance for a match between catalogs. It will add the new columns to the main df, fill in values for true matches (within max_distance), and return the updated main DataFrame.
 
 
-## How to use
+## How to Install 
 
 Intall astrocat package: 
 
@@ -19,9 +18,11 @@ then, import crossmatch_catalog from astrocat.crossmatch library:
 from astrocat.crossmatch import crossmatch_catalog
 ```
 
+## Functions
 
+### crossmatch_astrocat() function:
 
-## crossmatch_astrocat() function:
+This function will take two DataFrames (main and external), the column names for the R.A. and Dec. for each DataFrame, the list of column names to be added to the main DataFrame, and the maximum distance for a match between catalogs. It will add the new columns to the main df, fill in values for true matches (within max_distance), and return the updated main DataFrame.
 
 Here we have a description of the crossmatch_astrocat() function and its input variables. 
 
@@ -77,3 +78,27 @@ Here is how to use this function:
 
     col_list = ['WISEname', 'W1mag', 'w1snr', 'W2mag', 'w2snr']
     df_main_updated = crossmatch_astrocat(df_main, df_ext, 'RA1', 'DEC1', 'RA2', 'DEC2', col_list, 2.0)
+
+
+### crossmatch_radius()
+(still to share)
+
+This function will help visualise what is the best crossmatch radius to use when combining multi-mission archives. 
+
+Also, it will be possible to estimate the level of contamination based on the trends in number-counts that are associated to real-associations and spurious-associations. 
+
+
+
+## Contributing
+Contributions are welcome. To contribute, please follow these steps:
+
+1.Fork the repository.
+2.Create a new branch.
+3.Make your changes and commit them.
+4.Push changes to GitHub.
+5.Submit a pull request.
+
+
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
