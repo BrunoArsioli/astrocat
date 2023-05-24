@@ -1,0 +1,3 @@
+[submodule "fits_to_parquet"]
+	path = fits_to_parquet
+	url = https://github.com/BrunoArsioli/fits-to-parquet.git
