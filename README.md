@@ -88,7 +88,7 @@ Here is how to use this function:
     df_main_updated = crossmatch_astrocat(df_main, df_ext, 'RA1', 'DEC1', 'RA2', 'DEC2', col_list, 2.0)
 
 
-### crossmatch_radius() function:
+### --> crossmatch_radius() function:
 (still to share)
 
 This function will help visualise what is the best crossmatch radius to use when combining multi-mission archives. 
@@ -96,7 +96,7 @@ This function will help visualise what is the best crossmatch radius to use when
 Also, it will be possible to estimate the level of contamination based on the trends in number-counts that are associated to real-associations and spurious-associations. 
 
 
-### fits_to_parquet() 
+### --> fits_to_parquet() function: 
 This function converts .fits and .fit files to .parquet files using the astropy and pandas libraries. The resulting .parquet files are compressed and can be read faster than uncompressed .fits files.
 
 
@@ -123,14 +123,37 @@ for fits_file in fits_list:
 ```
 
 The resulting .parquet file will be saved in the same directory as the input .fits file.
+If the resulting file_name.praquet already exist, a warning message will be shown.
 
 
 
+### --> csv_to_parquet() function: 
+This function converts .csv files to .parquet files using the astropy and pandas libraries. The resulting .parquet files are compressed and can be read faster than uncompressed .csv files.
 
+Usage examples:
+Call the csv_to_parquet function and pass in the path to the .csv file:
 
+python
+```
+# import library
+import astrocat
+from astrocat.csv_to_parquet import csv_to_parquet
+```
 
+``` 
+# convert a .csv file to a .parquet file
+csv_to_parquet('path/to/csv/file.csv')
+```
 
+```
+# convert multiple .csv files to .parquet files
+csv_list = ['path/to/csv/file1.csv', 'path/to/csv/file2.csv', 'path/to/csv/file3.csv']
+for csv_file in csv_list:
+    csv_to_parquet(csv_file)
+```
 
+The resulting .parquet file will be saved in the same directory as the input .csv file.
+If the resulting file_name.parquet already exist, a warning message will be shown.
 
 
 
