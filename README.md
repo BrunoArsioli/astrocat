@@ -2,6 +2,17 @@
 
 Crossmatching Astrophysical Catalogs
 
+Astrocat, an open-source project aimed at supporting researchers and data scientists with crossmatching of catalogs. In astrophysics, this task is typically done via TopCat software. When moving the crossmatching tasks to a Python + Astropy framework, I believe you will experience efficiency & time gains in your daily workflow. More functions will be included in future.
+
+Current functions available:
+
+* crossmatch_astrocat() : match your main cat with and external cat, extrac info from ext and add to your main.
+
+* crossmatch_radius()   : have a bird's eye view on how your sky-crossmatch-radius inpact true vs. spurious matches  (still to push into astrocat)
+
+* fits_to_parquet()     : convert .fits to .parquet and save disk space (up to 60% reduction in file size)
+
+* csv_to_parquet()      : convert .csv  to .parquet and save disk space (up to 60% reduction in file size)
 
 
 ## How to Install 
