@@ -156,15 +156,18 @@ The resulting .parquet file will be saved in the same directory as the input .cs
 If the resulting file_name.parquet already exist, a warning message will be shown.
 
 
-
-
 ## Contributing
+
 Contributions are welcome. To contribute, please follow these steps:
 
 1.Fork the repository.
+
 2.Create a new branch.
+
 3.Make your changes and commit them.
+
 4.Push changes to GitHub.
+
 5.Submit a pull request.
 
 
