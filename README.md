@@ -99,6 +99,44 @@ This function will help visualise what is the best crossmatch radius to use when
 Also, it will be possible to estimate the level of contamination based on the trends in number-counts that are associated to real-associations and spurious-associations. 
 
 
+### fits_to_parquet() 
+This function converts .fits and .fit files to .parquet files using the astropy and pandas libraries. The resulting .parquet files are compressed and can be read faster than uncompressed .fits files.
+
+
+Usage examples:
+Call the fits_to_parquet function and pass in the path to the .fits file:
+
+python
+```
+# import library
+import astrocat
+from astrocat.fits_to_parquet import fits_to_parquet
+```
+
+``` 
+# convert a .fits file to a .parquet file
+fits_to_parquet('path/to/fits/file.fits')
+```
+
+```
+# convert multiple .fits files to .parquet files
+fits_list = ['path/to/fits/file1.fits', 'path/to/fits/file2.fits', 'path/to/fits/file3.fits']
+for fits_file in fits_list:
+    fits_to_parquet(fits_file)
+```
+
+The resulting .parquet file will be saved in the same directory as the input .fits file.
+
+
+
+
+
+
+
+
+
+
+
 
 ## Contributing
 Contributions are welcome. To contribute, please follow these steps:
