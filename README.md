@@ -47,8 +47,7 @@ This function finds matches between two catalogs of astronomical objects, given 
 For each object in the main catalog, the closest object in the external catalog within max_distance is identified.
 If such a match is found, specified information from the external catalog is added to the main catalog.
 
-Parameters
-----------
+#### crossmatch_astrocat() parameters:
 
 * df_main : DataFrame
     The main catalog DataFrame. Each row represents an astronomical object.
@@ -68,14 +67,12 @@ Parameters
 * max_distance : float
     Maximum distance in arcseconds to consider for a match.
 
-Returns
--------
+#### Returns
 
 * DataFrame
     The updated main catalog DataFrame, with new columns added from df_ext for matching objects.
 
-Examples
---------
+#### Examples
 
 Here is how to use this function:
 
@@ -91,7 +88,7 @@ Here is how to use this function:
     df_main_updated = crossmatch_astrocat(df_main, df_ext, 'RA1', 'DEC1', 'RA2', 'DEC2', col_list, 2.0)
 
 
-### crossmatch_radius()
+### crossmatch_radius() function:
 (still to share)
 
 This function will help visualise what is the best crossmatch radius to use when combining multi-mission archives. 
