@@ -1,3 +1,6 @@
 [submodule "fits_to_parquet"]
 	path = fits_to_parquet
 	url = https://github.com/BrunoArsioli/fits-to-parquet.git
+[submodule "csv_to_parquet"]
+	path = csv_to_parquet
+	url = https://github.com/BrunoArsioli/csv-to-parquet.git
