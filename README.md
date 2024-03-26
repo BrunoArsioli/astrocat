@@ -26,7 +26,8 @@ Intall astrocat package:
 then, import crossmatch_catalog from astrocat.crossmatch library:
 
 ```
-from astrocat.crossmatch import crossmatch_catalog
+from astrocat import crossmatch
+from astrocat import cross_panstarrs
 ```
 
 ## Functions
