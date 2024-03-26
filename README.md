@@ -87,6 +87,65 @@ Here is how to use this function:
     col_list = ['WISEname', 'W1mag', 'w1snr', 'W2mag', 'w2snr']
     df_main_updated = crossmatch_astrocat(df_main, df_ext, 'RA1', 'DEC1', 'RA2', 'DEC2', col_list, 2.0)
 
+### --> cross_panstarrs() function: 
+
+The cross_panstarrs function performs parallel cross-matching with a specified Pan-STARRS catalog using a specified radius. It utilizes ThreadPoolExecutor for efficient processing of HTTP requests in batches.
+
+#### Example:
+
+Python
+import pandas as pd
+from astrocat import cross_panstarrs
+
+- Sample DataFrame with source positions
+data = {'ra': [123.456, 20.0, 21.1, 22.2], 'dec': [78.901, 19.1, 20.2, 21.3]}
+df = pd.DataFrame(data)
+
+##### Perform cross-match with dr2/stack catalog and filter specific columns
+result_df = cross_panstarrs(df, radius=0.001, relevant_columns=['_ra_', '_dec_', 'gPSFMag', 'rPSFMag'], catalog="dr2/stack")
+
+print(result_df)
+
+##### Perform cross-match with dr2/stack catalog and have all columns from Pan-STARRS
+result_df = cross_panstarrs(df, radius=0.001, relevant_columns= None, catalog="dr2/stack")
+print(result_df)
+
+##### Perform cross-match with dr2/stack catalog and have all columns from Pan-STARRS
+result_df = cross_panstarrs(df, radius=0.001, relevant_columns= "Default", catalog="dr2/stack")
+print(result_df)
+
+
+#### Parameters:
+
+* !df (pandas.DataFrame): Input DataFrame containing source positions: R.A., Dec. (J2000), in degrees.
+    * !The name of the columns must be 'ra' and 'dec' (i.e.: df['ra','dec'] ) 
+* radius (float): Search radius in degrees for the cross-match.
+* num_workers (int, optional): Number of worker processes for parallel HTTP requests execution.
+    Defaults to 30. Recommendation: Do not go above 40, otherwise the PanSTARRS server can block your request.
+* relevant_columns (list, optional): List of specific columns to retrieve from Pan-STARRS. If "Default",
+    a default list of relevant columns is used. Defaults to "Default".
+
+* batch size (int, optional): the number of sources that goes into each HTTP request (each worker) 
+* catalog (str, optional): The Pan-STARRS catalog to query. Available options include:
+    - "dr1/mean" (DR1 Mean)
+    - "dr1/stack" (DR1 Stack)
+    - "dr2/mean" (DR2 Mean)  (Default)
+    - "dr2/stack" (DR2 Stack)
+    - "dr2/detection" (DR2 Detection)
+    - "dr2/forced_mean" (DR2 Forced Mean)
+    - check for the latest available catalogs at: https://catalogs.mast.stsci.edu/docs/panstarrs.html 
+
+#### Return Value:
+
+A pandas DataFrame containing the cross-matched results with relevant information from Pan-STARRS.
+Additional Notes:
+
+This function uses ThreadPoolExecutor for parallel processing.
+In case of errors, the function currently prints error messages to the console.
+For further details on the Pan-STARRS catalogs and API, refer to the documentation: https://catalogs.mast.stsci.edu/docs/panstarrs.html
+
+
+
 
 ### --> crossmatch_radius() function:
 (still to share)

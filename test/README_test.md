@@ -17,3 +17,9 @@ pytest
 This file contains tests for the `crossmatch_astrocats` function in the `crossmatch.py` module. 
 
 The tests use mock data to ensure the function correctly crossmatches two astronomical catalogs and updates the main catalog with data from the external catalog as expected.
+
+### test_cross_panstarrs.py 
+
+This file contains tests for the `crossmatch_astrocats` function in the `crossmatch.py` module. 
+
+The tests use mock data to ensure that the tool retrieves the corresponding counterparts in Pan-STARRS 

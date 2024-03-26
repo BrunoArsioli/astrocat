@@ -96,7 +96,7 @@ def cross_panstarrs(df, radius, num_workers=30, relevant_columns="Default", batc
     print(f"The cross-match radius is set to {radius} degrees; i.e. {radius * 3600} arcsecons.")
     print(f"You submited {num_workers} HTTP requests to the server, in parallel.")
 
-    with ThreadPoolExecutor(max_workers = n_workers) as executor:
+    with ThreadPoolExecutor(max_workers = num_workers) as executor:
         for dfps_batch in executor.map(get_data, indices):
             dfps = pd.concat([dfps, dfps_batch], ignore_index=True)
 
